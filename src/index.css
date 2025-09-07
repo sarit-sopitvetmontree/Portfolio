@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base tweaks */
+@layer base {
+  html { scroll-behavior: smooth; }
+  ::selection { background: rgba(255,255,255,0.16); color: #fff; }
+  body { @apply font-sans; }
+  body { @apply tracking-tight-0.3; }
+  h1,h2,h3 { @apply tracking-tight-0.3; }
+}
+
+/* Reusable utilities */
+@layer utilities {
+  .container-wide { @apply max-w-2xl mx-auto px-6 sm:px-8 border-x border-dashed border-neutral-800; }
+}
