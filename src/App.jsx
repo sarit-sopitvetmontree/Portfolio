@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Presentation } from "lucide-react";
 
+const withBase = (p) => `${import.meta.env.BASE_URL}${p.replace(/^\//,'')}`;
+
 function Reveal({ children, className = "", once = true, delay = 0, as: Tag = "div" }) {
   const ref = useRef(null);
   const [shown, setShown] = useState(false);
@@ -69,7 +71,7 @@ function Hero() {
         Check out some selected work below, or reach out anytime.
       </p>
       <div className="mt-8 flex gap-3">
-        <a href="/sarit_resume.pdf"
+        <a href={`${import.meta.env.BASE_URL}sarit_resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Resume"
@@ -114,10 +116,10 @@ function ProjectCard({ title, blurb, href, tag, imageSrc }) {
 
 function Work() {
   const projects = [
-    { title: 'Orcha', blurb: 'End-to-end experience and interface design from scratch', href: '/sample.pdf', tag: 'AI Agent', imageSrc: '/Thumbnail_Orcha.png' },
-    { title: 'Caretomo', blurb: 'Design system & interface: from IA to wireframe to high-fidelity', href: '/sample.pdf', tag: 'Healthcare', imageSrc: '/Thumbnail_Caretomo.png' },
-    { title: 'Sales Marker', blurb: 'Responsive improvements, UI QA, and new feature delivery', href: '/sample.pdf', tag: 'BtoB Sales', imageSrc: '/Thumbnail_SM.png' },
-    { title: 'DigiFab', blurb: 'Landing & ordering pages, designed from the ground up', href: '/sample.pdf', tag: '3D Printing Service', imageSrc: '/Thumbnail_DigiFab.png' },
+    { title: 'Orcha', blurb: 'End-to-end experience and interface design from scratch', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Orcha.png'), tag: 'AI Agent' },
+    { title: 'Caretomo', blurb: 'Design system & interface: from IA to wireframe to high-fidelity', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Caretomo.png'), tag: 'Healthcare' },
+    { title: 'Sales Marker', blurb: 'Responsive improvements, UI QA, and new feature delivery', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_SM.png'), tag: 'BtoB Sales' },
+    { title: 'DigiFab', blurb: 'Landing & ordering pages, designed from the ground up', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_DigiFab.png'), tag: '3D Printing Service' },
   ]
   return (
     <section id="work" className="container-wide py-12 sm:py-20">
