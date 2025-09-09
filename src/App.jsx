@@ -62,7 +62,7 @@ function Hero() {
       <h2 className="text-2xl sm:text-3xl text-neutral-100">
         I'm Sarit—a product designer who values clarity in everything, above all.
       </h2>
-      <h2 className="textxl sm:text-2xl text-neutral-500 mt-1">
+      <h2 className="text-lg sm:text-2xl text-neutral-500 mt-1">
         Everything (n.): User needs, Requirements, Goals, Strategy, Workflow, Communication, <span className="underline decoration-neutral-500 underline-offset-4 decoration-1">Design</span>, and etc.
       </h2>
       <p className="mt-6 max-w-xl text-neutral-500">
