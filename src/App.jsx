@@ -59,14 +59,14 @@ function Header() {
 function Hero() {
   return (
     <section id="top" className="container-wide pt-28 sm:pt-44 pb-12 sm:pb-20">
-      <h2 className="text-xl sm:text-2xl text-neutral-100">
-        I'm Sarit, a digital product designer based in Japan.
+      <h2 className="text-2xl sm:text-3xl text-neutral-100">
+        I'm Sarit—a product designer who values clarity in everything, above all.
       </h2>
-      <h2 className="text-xl sm:text-2xl text-neutral-500">
-        I love designing intuitive interfaces that improve people's life—and make it a little more beautiful.      
+      <h2 className="textxl sm:text-2xl text-neutral-500 mt-1">
+        Everything (n.): User needs, Requirements, Goals, Strategy, Workflow, Communication, <span className="underline decoration-neutral-500 underline-offset-4 decoration-1">Design</span>, and etc.
       </h2>
       <p className="mt-6 max-w-xl text-neutral-500">
-        Experience across healthcare, BtoB sales, and AI agents.
+        A developer-turned-designer with experience across healthcare, BtoB sales, and AI agents.
         I can communicate in Thai, English, Japanese, and JavaScript.
         Check out some selected work below, or reach out anytime.
       </p>
@@ -353,7 +353,7 @@ function Contact() {
         </span>
       </h2>
       <p className="mt-4 text-neutral-500">
-        I am open to interesting product problems and collaborations.
+        I am open to interesting product problems and career opportunity.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <a className="inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition"

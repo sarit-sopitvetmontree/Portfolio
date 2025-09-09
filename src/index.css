@@ -13,5 +13,5 @@
 
 /* Reusable utilities */
 @layer utilities {
-  .container-wide { @apply max-w-2xl mx-auto px-6 sm:px-8 border-x border-dashed border-neutral-800; }
+  .container-wide { @apply max-w-2xl mx-auto px-5 sm:px-8 border-x border-dashed border-neutral-800; }
 }
