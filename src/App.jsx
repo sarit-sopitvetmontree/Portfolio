@@ -44,7 +44,7 @@ function Reveal({ children, className = "", once = true, delay = 0, as: Tag = "d
 function Header() {
   const [open, setOpen] = useState(false)
   return (
-    <header className="top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-900/60 bg-neutral-900/90">
+    <header className="top-0 z-50 backdrop-blur-sm supports-backdrop-filter:bg-neutral-900/60 bg-neutral-900/90">
       <div className="container-wide flex items-center justify-between h-14 pt-10">
         <a className="text-lg text-neutral-100">Sarit</a>
         <nav className="flex items-center gap-6 text-sm">
@@ -89,7 +89,7 @@ function Hero() {
 function ProjectCard({ title, blurb, href, tag, imageSrc }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className="group block rounded-3xl border border-neutral-800 overflow-hidden hover:shadow-md hover:border-neutral-500 transition">
-      <div className="relative aspect-[20/9] overflow-hidden bg-neutral-700">
+      <div className="relative aspect-20/9 overflow-hidden bg-neutral-700">
         <img
           src={imageSrc}
           alt={title}
@@ -231,7 +231,7 @@ function HistoryList() {
               <button
                 type="button"
                 onClick={() => toggle(item.id)}
-                className="group w-full py-4 grid grid-cols-[1fr,1.5rem] sm:grid-cols-[3rem,1fr,1.5rem] items-start gap-4 text-left"
+                className="group w-full py-4 grid grid-cols-[1fr_1.5rem] sm:grid-cols-[3rem_1fr_1.5rem] items-start gap-4 text-left"
                 aria-expanded={isOpen}
                 aria-controls={`${item.id}-panel`}
               >
@@ -391,11 +391,11 @@ export default function App() {
       <main>
         <Reveal delay={100}><Hero /></Reveal>
         <Reveal delay={200}><Work /></Reveal>
-        <Reveal delay={300}><About /></Reveal>
-        <Reveal delay={300}><HistoryList /></Reveal>
-        <Reveal delay={400}><WhatPeopleSay /></Reveal>
-        <Reveal delay={500}><Contact /></Reveal>
-        <Reveal delay={500}><Footer /></Reveal>
+        <Reveal delay={200}><About /></Reveal>
+        <Reveal delay={200}><HistoryList /></Reveal>
+        <Reveal delay={200}><WhatPeopleSay /></Reveal>
+        <Reveal delay={200}><Contact /></Reveal>
+        <Footer />
       </main>
     </div>
   )
