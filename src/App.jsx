@@ -283,13 +283,17 @@ function WhatPeopleSay() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-neutral-100 hover:opacity-50">
-            Emi K Murano
+            Emi Kwon
           </a>
-          <p>Head of UX, Sales Marker Co., Ltd. (2025)</p>
+          <p>| Lecturer at Temple University Tokyo Campus<br></br>| Previously Head of UX at Sales Marker Co., Ltd.</p>
         </div>
-        <p className="pt-1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mauris ultricies, viverra nulla non, ornare elit. 
-          Vivamus vel nunc id diam molestie consequat. Proin id egestas lorem.
+        <p className="pt-1 text-sm">
+          Saritさんはプロダクトのクオリティを重視しながら、スピードが求められる環境でも根気強くデザインに取り組むことができます。
+
+          Saritさんは、エンジニアとしての知識を背景に持ちながら、人間中心設計を実践できる稀有なハイブリッド型のデザイナーです。
+          特に、ユーザ視点から一歩引いて考え、ステークホルダーにUXの観点を的確に伝える姿勢によって、関係者に新しい視点や刺激をもたらしてくれます。
+
+          UIからUX、さらにはデザインの改善作業まで関わることができ、即戦力として開発とデザインを推進できる貴重な人材です。
         </p>
 
         <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-6">
@@ -299,7 +303,7 @@ function WhatPeopleSay() {
           className="text-neutral-100 hover:opacity-50">
             Tanachai Anakewat
           </a>
-          <p>CTO, SIND Inc.</p>
+          <p>| CTO and Co-founder of SIND Inc.</p>
         </div>
         <p className="pt-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mauris ultricies, viverra nulla non, ornare elit. 
@@ -313,7 +317,7 @@ function WhatPeopleSay() {
           className="text-neutral-100 hover:opacity-50">
             Kota Yamaguchi
           </a>
-          <p>Frontend Engineer, QunaSys Inc. (2024)</p>
+          <p>| Product Engineer at SmartHR Inc.<br></br>| Previously Frontend Engineer at QunaSys Inc.</p>
         </div>
         <p className="pt-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mauris ultricies, viverra nulla non, ornare elit. 
@@ -327,12 +331,12 @@ function WhatPeopleSay() {
           className="text-neutral-100 hover:opacity-50">
             Setthibhak Suthithanakom
           </a>
-          <p>Co-founder, Digitech Fabrication Co., Ltd.</p>
+          <p>| PhD Candidate at Heidelberg University<br></br>| Co-founder of Digitech Fabrication Co., Ltd.</p>
         </div>
         <p className="pt-1">
-          Our company produces custom engineering parts, where an effective ordering interface is vital. 
-          Mr. Sarit’s design is functional and intuitive. Customers noted our platform’s ease of use and aesthetics over competitors, 
-          strengthening our market competitiveness.
+          Our company produces custom engineering parts in Thailand, where an effective ordering interface is vital. 
+          Mr. Sarit’s design is both functional and intuitive. 
+          Customers positively noted our platform’s ease of use and aesthetics compared to competitors, significantly strengthen our market competitiveness.
         </p>
         
       </div>
