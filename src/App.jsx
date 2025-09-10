@@ -63,7 +63,7 @@ function Hero() {
         I'm Sarit—a product designer who values clarity in everything, above all.
       </h2>
       <h2 className="text-lg sm:text-2xl text-neutral-500 mt-1">
-        Everything (n.): User needs, Requirements, Goals, Strategy, Workflow, Communication, <span className="underline decoration-neutral-500 underline-offset-4 decoration-1">Design</span>, and etc.
+        Everything (n.): Design, User needs, Requirements, Goals, Strategy, Workflow, Communication, etc.
       </h2>
       <p className="mt-6 max-w-xl text-neutral-500">
         A developer-turned-designer with experience across healthcare, BtoB sales, and AI agents.
@@ -278,19 +278,19 @@ function WhatPeopleSay() {
       <h2 className="text-xl sm:text-2xl text-neutral-500">What colleagues say</h2>
       <div className="sm:col-span-2 text-neutral-500">
 
-        {/* <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-6">
+        <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-6">
           <a href="https://www.linkedin.com/in/grumpyuser/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-neutral-100 hover:opacity-50">
             Emi K Murano
           </a>
-          <p italic>Head of UX, Sales Marker Co., Ltd. (2025)</p>
+          <p>Head of UX, Sales Marker Co., Ltd. (2025)</p>
         </div>
         <p className="pt-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mauris ultricies, viverra nulla non, ornare elit. 
           Vivamus vel nunc id diam molestie consequat. Proin id egestas lorem.
-        </p>  */}
+        </p>
 
         <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-6">
           <a href="https://www.linkedin.com/in/tanachaiana/"
