@@ -285,7 +285,7 @@ function WhatPeopleSay() {
           className="text-neutral-100 hover:opacity-50">
             Emi Kwon
           </a>
-          <p>| Lecturer at Temple University Tokyo Campus<br></br>| Previously Head of UX at Sales Marker Co., Ltd.</p>
+          <p>| Lecturer at Temple University Tokyo Campus</p>
         </div>
         <p className="pt-1 text-sm">
           Saritさんはプロダクトのクオリティを重視しながら、スピードが求められる環境でも根気強くデザインに取り組むことができます。
@@ -331,7 +331,7 @@ function WhatPeopleSay() {
           className="text-neutral-100 hover:opacity-50">
             Setthibhak Suthithanakom
           </a>
-          <p>| PhD Candidate at Heidelberg University<br></br>| Co-founder of Digitech Fabrication Co., Ltd.</p>
+          <p>| Co-founder of Digitech Fabrication Co., Ltd.</p>
         </div>
         <p className="pt-1">
           Our company produces custom engineering parts in Thailand, where an effective ordering interface is vital. 
