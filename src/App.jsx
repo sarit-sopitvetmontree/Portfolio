@@ -66,7 +66,7 @@ function Hero() {
         Everything (n.): Design, User needs, Requirements, Goals, Strategy, Workflow, Communication, etc.
       </h2>
       <p className="mt-6 max-w-xl text-neutral-500">
-        <span className="text-neutral-100">Language</span> I speak: Thai, English, Japanese, HTML, CSS, and JavaScript.<br></br>
+        <span className="text-neutral-100">Languages</span> I speak: Thai, English, Japanese, HTML, CSS, and JavaScript.<br></br>
         Field of <span className="text-neutral-100">experience</span>: Healthcare, AI agents, BtoB sales, 3D printing service.<br></br>
         Check out some selected work below, or reach out anytime.
       </p>
@@ -139,7 +139,7 @@ function ProjectCard({
 
         {featured && (
           <Star
-            className="pointer-events-none absolute top-5 right-5 w-5 h-5 text-neutral-600 opacity-100 transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0"
+            className="pointer-events-none absolute top-5 right-5 w-5 h-5 text-neutral-500 opacity-100 transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0"
             aria-hidden="true"
           />
         )}
@@ -322,7 +322,7 @@ function WhatPeopleSay() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-neutral-100 hover:opacity-50">
-            Emi Kwon
+            Emi K Murano
           </a>
           <p>| Lecturer at Temple University Tokyo Campus</p>
         </div>
