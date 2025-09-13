@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Presentation } from "lucide-react";
+import { Presentation, Star } from "lucide-react";
 
 const withBase = (p) => `${import.meta.env.BASE_URL}${p.replace(/^\//,'')}`;
 
@@ -60,14 +60,14 @@ function Hero() {
   return (
     <section id="top" className="container-wide pt-28 sm:pt-44 pb-12 sm:pb-20">
       <h2 className="text-2xl sm:text-3xl text-neutral-100">
-        I'm Sarit—a product designer who values clarity in everything, above all.
+        I'm Sarit, a product designer who values clarity in everything, above all.
       </h2>
       <h2 className="text-lg sm:text-2xl text-neutral-500 mt-1">
         Everything (n.): Design, User needs, Requirements, Goals, Strategy, Workflow, Communication, etc.
       </h2>
       <p className="mt-6 max-w-xl text-neutral-500">
-        A developer-turned-designer with experience across healthcare, BtoB sales, and AI agents.
-        I can communicate in Thai, English, Japanese, and JavaScript.
+        <span className="text-neutral-100">Language</span> I speak: Thai, English, Japanese, HTML, CSS, and JavaScript.<br></br>
+        Field of <span className="text-neutral-100">experience</span>: Healthcare, AI agents, BtoB sales, 3D printing service.<br></br>
         Check out some selected work below, or reach out anytime.
       </p>
       <div className="mt-8 flex gap-3">
@@ -86,47 +86,86 @@ function Hero() {
   )
 }
 
-function ProjectCard({ title, blurb, href, tag, imageSrc }) {
+function ProjectCard({
+  title, blurb, href, tag, imageSrc, height = '10rem',featured = false,
+}) {
+
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="group block rounded-3xl border border-neutral-800 overflow-hidden hover:shadow-md hover:border-neutral-500 transition">
-      <div className="relative aspect-20/9 overflow-hidden bg-neutral-700">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ '--card-h': height }}
+      className="group rounded-3xl border border-neutral-800 overflow-hidden hover:shadow-md hover:border-neutral-500 transition duration-200 flex flex-col sm:flex-row sm:h-[var(--card-h)]"
+      aria-label={`${title} — ${tag} (opens in new tab)`}
+    >
+      <div className="relative w-full aspect-[20/9] sm:w-[var(--card-h)] sm:h-[var(--card-h)] flex-none bg-neutral-700">
         <img
           src={imageSrc}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover object-left"
           loading="lazy"
           decoding="async"
-          sizes="(min-width: 640px) 50vw, 100vw"
+          sizes="(min-width: 640px) 160px, 100vw"
         />
       </div>
-      <div className="p-5">
-        <div className="text-xs uppercase tracking-widest text-neutral-500">{tag}</div>
-        <div className="mt-1 flex items-center gap-2">
-          <h3 className="text-lg sm:text-xl">{title}</h3>
-          <Presentation
-            className="w-4 h-4 shrink-0 text-neutral-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
-            aria-hidden="true"
+
+      <div className="relative p-5 flex-1 overflow-hidden bg-neutral-900 sm:h-[var(--card-h)] sm:flex sm:flex-col sm:justify-center">
+        <div
+          className="pointer-events-none absolute inset-y-0 left-0 hidden sm:block
+                     w-0 group-hover:w-full group-focus-visible:w-full
+                     transition-[width] duration-500 ease-out overflow-hidden [will-change:width]"
+          aria-hidden="true"
+        >
+          <img
+            src={imageSrc}
+            alt=""
+            className="
+              absolute top-0 h-full w-auto object-cover object-left
+              sm:left-[calc(var(--card-h)*-1)]
+              [mask-image:linear-gradient(to_right,white_50%,transparent)]
+              [-webkit-mask-image:linear-gradient(to_right,white_50%,transparent)]
+              [mask-size:100%_100%] [-webkit-mask-size:100%_100%]
+              [mask-repeat:no-repeat] [-webkit-mask-repeat:no-repeat]
+            "
           />
         </div>
-        <p className="mt-1 text-neutral-500">{blurb}</p>
+
+        <div className="relative z-10">
+          <div className="text-xs uppercase tracking-widest text-neutral-500">{tag}</div>
+          <h3 className="mt-1 text-lg sm:text-xl text-neutral-100}">{title}</h3>
+          <p className="mt-1 text-neutral-500">{blurb}</p>
+        </div>
+
+        {featured && (
+          <Star
+            className="pointer-events-none absolute top-5 right-5 w-5 h-5 text-neutral-600 opacity-100 transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0"
+            aria-hidden="true"
+          />
+        )}
+
+        <Presentation
+          className="absolute top-5 right-5 w-5 h-5 text-neutral-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+          aria-hidden="true"
+        />
       </div>
     </a>
-  )
+  );
 }
 
 function Work() {
   const projects = [
-    { title: 'Orcha', blurb: 'End-to-end experience and interface design from scratch', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Orcha.png'), tag: 'AI Agent' },
-    { title: 'Caretomo', blurb: 'Design system & interface: from IA to wireframe to high-fidelity', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Caretomo.png'), tag: 'Healthcare' },
+    { title: 'Caretomo', blurb: 'Design system & interface: from IA to wireframe to high-fidelity', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Caretomo.png'), tag: 'Healthcare',featured: true },
+    { title: 'Orcha', blurb: 'End-to-end experience and interface design from scratch', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Orcha.png'), tag: 'AI Agent',featured: true },
     { title: 'Sales Marker', blurb: 'Responsive improvements, UI QA, and new feature delivery', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_SM.png'), tag: 'BtoB Sales' },
     { title: 'DigiFab', blurb: 'Landing & ordering pages, designed from the ground up', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_DigiFab.png'), tag: '3D Printing Service' },
   ]
   return (
     <section id="work" className="container-wide py-12 sm:py-20">
-      <div className="flex items-end justify-between gap-4">
+      <div className="flex items-end justify-between gap-6">
         <p className="text-xl sm:text-2xl text-neutral-500">Selected work</p>
       </div>
-      <div className="mt-6 grid sm:grid-cols-2 gap-4">
+      <div className="mt-6 flex flex-col gap-4">
         {projects.map((p) => (
           <ProjectCard key={p.title} {...p} />
         ))}
@@ -144,7 +183,7 @@ function About() {
         </span>
         {/* ensure a space between the parts */}
         <span className="text-neutral-500">{' '}
-          took me from mechanical engineering to frontend development to product design—where I found my place.
+          took me from mechanical engineering to frontend development to product design.. where I found my place.
         </span>
       </h2>
       <div className="mt-6 sm:col-span-2 text-neutral-500">
@@ -303,7 +342,7 @@ function WhatPeopleSay() {
           className="text-neutral-100 hover:opacity-50">
             Tanachai Anakewat
           </a>
-          <p>| CTO and Co-founder of SIND Inc.</p>
+          <p>| CTO of SIND Inc.</p>
         </div>
         <p className="pt-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mauris ultricies, viverra nulla non, ornare elit. 
