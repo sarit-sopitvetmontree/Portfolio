@@ -207,9 +207,9 @@ function About() {
       </h2>
       <div className="text-custom-text mt-6 text-neutral-500">
         <p>
-          I help startups turn ideas into products—and I learn constantly in the process. 
-          Above all, I’ve learned that <span className="underline decoration-neutral-500 underline-offset-4 decoration-1">clarity</span> across design, workflows, requirements, and communication saves time and resources.
-          Outside of work, I enjoy exploring nature and immersing myself in all kinds of tales.
+          I help startups turn ideas into products, and learn something new along the way. <br className="hidden sm:flex"></br>
+          I once pursued perfection, but there is only trade-offs, in design and in life. <br className="hidden sm:flex"></br>
+          I enjoy exploring nature and immersing myself in all kinds of tales.
         </p>
       </div>
     </section>
