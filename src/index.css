@@ -39,7 +39,7 @@
 @layer components {
   .text-custom-hero {
     @apply text-3xl;
-    @variant sm   { @apply text-4xl; }
+    @variant sm   { @apply text-4xl/11; }
     @variant 3xl  { @apply text-[2.5rem]/12; }
   }
   .text-custom-header {
