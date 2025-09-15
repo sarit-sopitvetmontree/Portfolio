@@ -207,9 +207,14 @@ function About() {
       </h2>
       <div className="text-custom-text mt-6 text-neutral-500">
         <p>
-          I help startups turn ideas into products, and learn something new along the way. <br className="hidden sm:flex"></br>
-          I once pursued perfection, but there is only trade-offs, in design and in life. <br className="hidden sm:flex"></br>
-          I enjoy exploring nature and immersing myself in all kinds of tales.
+          I love crafting simple, beautiful things that make people's life better.
+          I help startups turn ideas into products, and learn something new every step on the way.
+          Outside of work, I enjoy exploring <span></span>
+          <a href="https://www.instagram.com/oil.sarit/" 
+          target="_blank"
+          rel="noopener noreferrer" 
+          className="hover:opacity-60 underline underline-offset-4 decoration-1">nature</a>
+          <span></span> and immersing myself in all kinds of tales.
         </p>
       </div>
     </section>
