@@ -60,7 +60,7 @@ function Hero() {
   return (
     <section id="top" className="container-wide pt-28 sm:pt-44 pb-12 sm:pb-20">
       <h1 className="text-custom-hero text-neutral-100">
-        I'm Sarit, a product designer who values clarity in everything, above all.
+        I'm Sarit, a product designer who values clarity in everything.
       </h1>
       <h2 className="text-custom-subheader text-neutral-500 mt-1">
         Everything (n.): Design, User needs, Requirements, Goals, Strategy, Workflow, Communication, etc.
