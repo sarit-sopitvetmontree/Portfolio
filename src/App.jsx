@@ -46,10 +46,10 @@ function Header() {
   return (
     <header className="top-0 z-50 backdrop-blur-sm supports-backdrop-filter:bg-neutral-900/60 bg-neutral-900/90">
       <div className="container-wide flex items-center justify-between h-14 pt-10">
-        <a className="text-lg text-neutral-100">Sarit</a>
-        <nav className="flex items-center gap-6 text-sm">
-          <a href="#work" className="text-neutral-400 hover:opacity-70">Work</a>
-          <a href="#about" className="text-neutral-400 hover:opacity-70">About</a>
+        <a className="text-lg sm:text-xl 3xl:text-2xl font-medium text-neutral-100">Sarit</a>
+        <nav className="flex items-center gap-6 sm:gap-8 text-sm">
+          <a href="#work" className="text-custom-text text-neutral-400 hover:opacity-70">Work</a>
+          <a href="#about" className="text-custom-text text-neutral-400 hover:opacity-70">About</a>
         </nav>
       </div>
     </header>
@@ -59,26 +59,26 @@ function Header() {
 function Hero() {
   return (
     <section id="top" className="container-wide pt-28 sm:pt-44 pb-12 sm:pb-20">
-      <h2 className="text-2xl sm:text-3xl text-neutral-100">
+      <h1 className="text-custom-hero text-neutral-100">
         I'm Sarit, a product designer who values clarity in everything, above all.
-      </h2>
-      <h2 className="text-lg sm:text-2xl text-neutral-500 mt-1">
+      </h1>
+      <h2 className="text-custom-subheader text-neutral-500 mt-1">
         Everything (n.): Design, User needs, Requirements, Goals, Strategy, Workflow, Communication, etc.
       </h2>
-      <p className="mt-6 max-w-xl text-neutral-500">
-        <span className="text-neutral-100">Languages</span> I speak: Thai, English, Japanese, HTML, CSS, and JavaScript.<br></br>
+      <p className="text-custom-text mt-6 3xl:mt-8 text-neutral-500">
+        <span className="text-neutral-100">Languages</span> I speak: Thai, English, Japanese, and JavaScript.<br></br>
         Design <span className="text-neutral-100">experience</span>: Healthcare, AI agents, BtoB sales, 3D printing service.<br></br>
-        Check out some selected work below, or reach out anytime.
+        Check out some selected works below, or reach out anytime.
       </p>
-      <div className="mt-8 flex gap-3">
+      <div className="mt-8 3xl:mt-10 flex gap-3">
         <a href={`${import.meta.env.BASE_URL}sarit_resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Resume"
-          className="text-amber-300 inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition">
+          className="text-custom-text text-amber-300 inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition">
           Resume
         </a>
-        <a href="#contact" className="text-neutral-100 inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition">
+        <a href="#contact" className="text-custom-text text-neutral-100 inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition">
           Get in touch
         </a>
       </div>
@@ -96,10 +96,10 @@ function ProjectCard({
       target="_blank"
       rel="noopener noreferrer"
       style={{ '--card-h': height }}
-      className="group rounded-3xl border border-neutral-800 overflow-hidden hover:shadow-md hover:border-neutral-500 transition duration-200 flex flex-col sm:flex-row sm:h-[var(--card-h)]"
+      className="group rounded-3xl border border-neutral-800 overflow-hidden hover:shadow-md hover:border-neutral-500 transition duration-200 flex flex-col xs:flex-row xs:h-[var(--card-h)]"
       aria-label={`${title} — ${tag} (opens in new tab)`}
     >
-      <div className="relative w-full aspect-[20/9] sm:w-[var(--card-h)] sm:h-[var(--card-h)] flex-none bg-neutral-700">
+      <div className="relative w-full aspect-[20/9] xs:w-[var(--card-h)] xs:h-[var(--card-h)] flex-none bg-neutral-700">
         <img
           src={imageSrc}
           alt={title}
@@ -110,9 +110,9 @@ function ProjectCard({
         />
       </div>
 
-      <div className="relative p-5 flex-1 overflow-hidden bg-neutral-900 sm:h-[var(--card-h)] sm:flex sm:flex-col sm:justify-center">
+      <div className="relative p-5 flex-1 overflow-hidden bg-neutral-900 xs:h-[var(--card-h)] xs:flex xs:flex-col xs:justify-center">
         <div
-          className="pointer-events-none absolute inset-y-0 left-0 hidden sm:block
+          className="pointer-events-none absolute inset-y-0 left-0 hidden xs:block
                      w-0 group-hover:w-full group-focus-visible:w-full
                      transition-[width] duration-500 ease-out overflow-hidden [will-change:width]"
           aria-hidden="true"
@@ -122,7 +122,7 @@ function ProjectCard({
             alt=""
             className="
               absolute top-0 h-full w-auto object-cover object-left
-              sm:left-[calc(var(--card-h)*-1)]
+              xs:left-[calc(var(--card-h)*-1)]
               [mask-image:linear-gradient(to_right,white_50%,transparent)]
               [-webkit-mask-image:linear-gradient(to_right,white_50%,transparent)]
               [mask-size:100%_100%] [-webkit-mask-size:100%_100%]
@@ -132,20 +132,20 @@ function ProjectCard({
         </div>
 
         <div className="relative z-10">
-          <div className="text-xs uppercase tracking-widest text-neutral-500">{tag}</div>
-          <h3 className="mt-1 text-lg sm:text-xl text-neutral-100}">{title}</h3>
-          <p className="mt-1 text-neutral-500">{blurb}</p>
+          <div className="text-custom-label uppercase tracking-widest text-neutral-500">{tag}</div>
+          <h3 className="text-custom-subheader mt-1 text-neutral-100}">{title}</h3>
+          <p className="text-custom-text mt-1 text-neutral-500">{blurb}</p>
         </div>
 
         {featured && (
           <Sparkle
-            className="pointer-events-none absolute top-5 right-5 w-5 h-5 text-neutral-600 opacity-100 transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0"
+            className="pointer-events-none absolute top-5 right-5 w-6 h-6 text-neutral-500 opacity-100 transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0"
             aria-hidden="true"
           />
         )}
 
         <Presentation
-          className="absolute top-5 right-5 w-5 h-5 text-neutral-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+          className="absolute top-5 right-5 w-6 h-6 text-neutral-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
           aria-hidden="true"
         />
       </div>
@@ -163,7 +163,7 @@ function Work() {
   return (
     <section id="work" className="container-wide py-12 sm:py-20">
       <div className="flex items-end justify-between gap-6">
-        <p className="text-xl sm:text-2xl text-neutral-500">Selected work</p>
+        <p className="text-custom-header text-neutral-500">Selected works</p>
       </div>
       <div className="mt-6 flex flex-col gap-4">
         {projects.map((p) => (
@@ -177,16 +177,16 @@ function Work() {
 function About() {
   return (
     <section id="about" className="container-wide pt-12 sm:pt-20 pb-6 sm:pb-10">
-      <h2 className="text-xl sm:text-2xl">
+      <h2 className="text-custom-header">
         <span className="text-neutral-100">
           My journey
         </span>
         {/* ensure a space between the parts */}
-        <span className="text-neutral-500">{' '}
-          took me from mechanical engineering to frontend development to product design.. where I found my place.
+        <span className="text-custom-header text-neutral-500">{' '}
+          took me from mechanical engineering to frontend development to product design, where I found my place.
         </span>
       </h2>
-      <div className="mt-6 sm:col-span-2 text-neutral-500">
+      <div className="text-custom-text mt-6 text-neutral-500">
         <p>
           I help startups turn ideas into products—and I learn constantly in the process. 
           Above all, I’ve learned that <span className="underline decoration-neutral-500 underline-offset-4 decoration-1">clarity</span> across design, workflows, requirements, and communication saves time and resources.
@@ -261,7 +261,7 @@ function HistoryList() {
   }
 
   return (
-    <section id="historylist" className="container-wide pb-12 sm:pb-20">
+    <section id="historylist" className="text-custom-text container-wide pb-12 sm:pb-20">
       <div className="mt-6 border-y border-neutral-800 divide-y divide-neutral-800">
         {items.map((item) => {
           const isOpen = openSet.has(item.id)
@@ -314,19 +314,19 @@ function HistoryList() {
 function WhatPeopleSay() {
   return (
     <section id="whatpeoplesay" className="container-wide py-12 sm:py-20">
-      <h2 className="text-xl sm:text-2xl text-neutral-500">What colleagues say</h2>
-      <div className="sm:col-span-2 text-neutral-500">
+      <h2 className="text-custom-header text-neutral-500">What colleagues say</h2>
+      <div className="text-custom-text text-neutral-500">
 
         <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-6">
           <a href="https://www.linkedin.com/in/grumpyuser/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-100 hover:opacity-50">
+          className="text-neutral-100 hover:opacity-50 underline underline-offset-4 sm:underline-offset-5 decoration-0">
             Emi K Murano
           </a>
           <p>| Lecturer at Temple University Tokyo Campus</p>
         </div>
-        <p className="pt-1 text-sm">
+        <p className="text-custom-textjapanese pt-1 sm:pt-2">
           Saritさんはプロダクトのクオリティを重視しながら、スピードが求められる環境でも根気強くデザインに取り組むことができます。
 
           Saritさんは、エンジニアとしての知識を背景に持ちながら、人間中心設計を実践できる稀有なハイブリッド型のデザイナーです。
@@ -339,12 +339,12 @@ function WhatPeopleSay() {
           <a href="https://www.linkedin.com/in/tanachaiana/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-100 hover:opacity-50">
+          className="text-neutral-100 hover:opacity-50 underline underline-offset-4 sm:underline-offset-5 decoration-0">
             Tanachai Anakewat
           </a>
           <p>| CTO of SIND Inc.</p>
         </div>
-        <p className="pt-1">
+        <p className="pt-1 sm:pt-2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mauris ultricies, viverra nulla non, ornare elit. 
           Vivamus vel nunc id diam molestie consequat.
         </p>
@@ -353,12 +353,12 @@ function WhatPeopleSay() {
           <a href="https://www.linkedin.com/in/kota-yamaguchi-a91224164/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-100 hover:opacity-50">
+          className="text-neutral-100 hover:opacity-50 underline underline-offset-4 sm:underline-offset-5 decoration-0">
             Kota Yamaguchi
           </a>
           <p>| Product Engineer at SmartHR Inc.<br></br>| Previously Frontend Engineer at QunaSys Inc.</p>
         </div>
-        <p className="pt-1">
+        <p className="pt-1 sm:pt-2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mauris ultricies, viverra nulla non, ornare elit. 
           Vivamus vel nunc id diam molestie consequat.
         </p>
@@ -367,12 +367,12 @@ function WhatPeopleSay() {
           <a href="https://www.linkedin.com/in/setthibhak-suthithanakom/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-100 hover:opacity-50">
+          className="text-neutral-100 hover:opacity-50 underline underline-offset-4 sm:underline-offset-5 decoration-0">
             Setthibhak Suthithanakom
           </a>
           <p>| Co-founder of Digitech Fabrication Co., Ltd.</p>
         </div>
-        <p className="pt-1">
+        <p className="pt-1 sm:pt-2">
           Our company produces custom engineering parts in Thailand, where an effective ordering interface is vital. 
           Mr. Sarit’s design is both functional and intuitive. 
           Customers positively noted our platform’s ease of use and aesthetics compared to competitors, significantly strengthen our market competitiveness.
@@ -386,19 +386,18 @@ function WhatPeopleSay() {
 function Contact() {
   return (
     <section id="contact" className="container-wide py-12 sm:py-20">
-      <h2 className="text-xl sm:text-2xl">
+      <h2 className="text-custom-header">
         <span className="text-neutral-100">
           Contact me,
         </span>
-        {/* ensure a space between the parts */}
         <span className="text-neutral-500">{' '}
           anytime
         </span>
       </h2>
-      <p className="mt-4 text-neutral-500">
+      <p className="text-custom-text mt-4 text-neutral-500">
         I am open to interesting product problems and career opportunity.
       </p>
-      <div className="mt-8 flex flex-wrap gap-3">
+      <div className="text-custom-text mt-8 flex flex-wrap gap-3">
         <a className="inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition"
           href="mailto:sarit.sopitvetmontree@gmail.com">
           sarit.sopitvetmontree@gmail.com
@@ -416,11 +415,11 @@ function Contact() {
 
 function Footer() {
   return (
-    <section id="footer" className="container-wide flex items-center justify-between pt-24 sm:pt-40">
-      <footer className="mt-10 py-6 text-sm text-neutral-600">
+    <section id="footer" className="text-custom-text container-wide flex items-center justify-between pt-24 sm:pt-40">
+      <footer className="mt-10 py-6 text-neutral-600">
         © {new Date().getFullYear()}
       </footer>
-      <footer className="mt-10 py-6 text-sm text-neutral-600">
+      <footer className="mt-10 py-6 text-neutral-600">
         Sarit Sopitvetmontree
       </footer>
     </section>
