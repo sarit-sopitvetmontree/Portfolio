@@ -87,30 +87,48 @@ function Hero() {
 }
 
 function ProjectCard({
-  title, blurb, href, tag, imageSrc, height = '10rem',featured = false,
+  title, blurb, href, tag, imageSrc, height = '10rem', featured = false,
 }) {
-
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      // base: use the prop as usual
       style={{ '--card-h': height }}
-      className="group rounded-3xl border border-neutral-800 overflow-hidden hover:shadow-md hover:border-neutral-500 transition duration-200 flex flex-col xs:flex-row xs:h-[var(--card-h)]"
+      className="
+        group rounded-3xl border border-neutral-800 overflow-hidden hover:shadow-md hover:border-neutral-500
+        transition duration-200 flex flex-col xs:flex-row
+
+        /* resolved height = prop by default, 12rem at ≥3xl */
+        [--card-h-resolved:var(--card-h)] 3xl:[--card-h-resolved:12rem]
+
+        xs:h-[var(--card-h-resolved)]
+      "
       aria-label={`${title} — ${tag} (opens in new tab)`}
     >
-      <div className="relative w-full aspect-[20/9] xs:w-[var(--card-h)] xs:h-[var(--card-h)] flex-none bg-neutral-700">
+      <div
+        className="
+          relative w-full aspect-[20/9] flex-none bg-neutral-700
+          xs:w-[var(--card-h-resolved)] xs:h-[var(--card-h-resolved)]
+        "
+      >
         <img
           src={imageSrc}
           alt={title}
           className="absolute inset-0 h-full w-full object-cover object-left"
           loading="lazy"
           decoding="async"
-          sizes="(min-width: 640px) 160px, 100vw"
+          sizes="(min-width: 640px) 100vw, 100vw"
         />
       </div>
 
-      <div className="relative p-5 flex-1 overflow-hidden bg-neutral-900 xs:h-[var(--card-h)] xs:flex xs:flex-col xs:justify-center">
+      <div
+        className="
+          relative p-5 flex-1 overflow-hidden bg-neutral-900
+          xs:h-[var(--card-h-resolved)] xs:flex xs:flex-col xs:justify-center
+        "
+      >
         <div
           className="pointer-events-none absolute inset-y-0 left-0 hidden xs:block
                      w-0 group-hover:w-full group-focus-visible:w-full
@@ -122,7 +140,7 @@ function ProjectCard({
             alt=""
             className="
               absolute top-0 h-full w-auto object-cover object-left
-              xs:left-[calc(var(--card-h)*-1)]
+              xs:left-[calc(var(--card-h-resolved)*-1)]
               [mask-image:linear-gradient(to_right,white_50%,transparent)]
               [-webkit-mask-image:linear-gradient(to_right,white_50%,transparent)]
               [mask-size:100%_100%] [-webkit-mask-size:100%_100%]
@@ -133,7 +151,7 @@ function ProjectCard({
 
         <div className="relative z-10">
           <div className="text-custom-label uppercase tracking-widest text-neutral-500">{tag}</div>
-          <h3 className="text-custom-subheader mt-1 text-neutral-100}">{title}</h3>
+          <h3 className="text-custom-subheader mt-1 text-neutral-100">{title}</h3>
           <p className="text-custom-text mt-1 text-neutral-500">{blurb}</p>
         </div>
 
@@ -153,6 +171,7 @@ function ProjectCard({
   );
 }
 
+
 function Work() {
   const projects = [
     { title: 'Caretomo', blurb: 'Design system & interface: from IA to wireframe to high-fidelity', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Caretomo.png'), tag: 'Healthcare',featured: true },
@@ -165,7 +184,7 @@ function Work() {
       <div className="flex items-end justify-between gap-6">
         <p className="text-custom-header text-neutral-500">Selected works</p>
       </div>
-      <div className="mt-6 flex flex-col gap-4">
+      <div className="mt-6 flex flex-col gap-4 3xl:gap-5">
         {projects.map((p) => (
           <ProjectCard key={p.title} {...p} />
         ))}
