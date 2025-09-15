@@ -63,7 +63,7 @@ function Hero() {
         I'm Sarit, a product designer who values clarity in everything.
       </h1>
       <h2 className="text-custom-subheader text-neutral-500 mt-1">
-        Everything (n.): Design, User needs, Requirements, Goals, Strategy, Workflow, Communication, etc.
+        Everything (n.): Design, User needs, Requirements, Goals, Strategy, Workflow, Communication, Et cetera.
       </h2>
       <p className="text-custom-text mt-6 3xl:mt-8 text-neutral-500">
         <span className="text-neutral-100">Languages</span> I speak: Thai, English, Japanese, and JavaScript.<br></br>
