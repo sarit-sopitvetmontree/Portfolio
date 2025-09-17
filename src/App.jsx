@@ -67,7 +67,7 @@ function Hero() {
       </h2>
       <p className="text-custom-text mt-6 3xl:mt-8 text-neutral-500">
         <span className="text-neutral-100">Languages</span> I speak: Thai, English, Japanese, and JavaScript.<br></br>
-        Design <span className="text-neutral-100">experience</span>: Healthcare, AI agents, BtoB sales, 3D printing service.<br></br>
+        <span className="text-neutral-100">Design experience</span>: Healthcare, AI agents, BtoB sales, 3D printing service.<br></br>
         Check out some selected works below, or reach out anytime.
       </p>
       <div className="mt-8 3xl:mt-10 flex gap-3">
@@ -198,17 +198,20 @@ function About() {
     <section id="about" className="container-wide pt-12 sm:pt-20 pb-6 sm:pb-10">
       <h2 className="text-custom-header">
         <span className="text-neutral-100">
-          My journey
+          My journey 
         </span>
-        {/* ensure a space between the parts */}
-        <span className="text-custom-header text-neutral-500">{' '}
-          took me from mechanical engineering to frontend development to product design, where I found my place.
+        <span className="text-custom-header text-neutral-500">
+          {' '}took me from mechanical engineering to frontend development{' '} 
+        <span className="text-neutral-100">
+          to product design
+        </span>
+          , where I discovered human-centered problem-solving.
         </span>
       </h2>
       <div className="text-custom-text mt-6 text-neutral-500">
         <p>
-          I love crafting simple, beautiful things that make people's life better.
-          I help startups turn ideas into products, and learn something new every step on the way.
+          I design simple, beautiful products that not only solve real problems but also drive measurable business results. 
+          Whether it’s improving engagement, accelerating time-to-market, or helping startups transform ideas into scalable solutions. 
           Outside of work, I enjoy exploring <span></span>
           <a href="https://www.instagram.com/oil.sarit/" 
           target="_blank"
@@ -338,7 +341,7 @@ function HistoryList() {
 function WhatPeopleSay() {
   return (
     <section id="whatpeoplesay" className="container-wide py-12 sm:py-20">
-      <h2 className="text-custom-header text-neutral-500">What colleagues say</h2>
+      <h2 className="text-custom-header text-neutral-500">Endorsements</h2>
       <div className="text-custom-text text-neutral-500">
 
         <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-6">
@@ -412,10 +415,10 @@ function Contact() {
     <section id="contact" className="container-wide py-12 sm:py-20">
       <h2 className="text-custom-header">
         <span className="text-neutral-100">
-          Contact me,
+          Contact me
         </span>
-        <span className="text-neutral-500">{' '}
-          anytime
+        <span className="text-neutral-500">
+          , anytime
         </span>
       </h2>
       <p className="text-custom-text mt-4 text-neutral-500">
