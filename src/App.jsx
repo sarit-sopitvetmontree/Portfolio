@@ -261,7 +261,7 @@ function HistoryList() {
       year: '2023',
       company: 'Liigo',
       role: 'Frontend Engineer',
-      text: 'I began a front-end developer internship at Liigo Inc. after self-learning frontend development. I helped build and maintain the Area Compass application, a digital transformation app for the travel industry. Working with talented colleagues, I deepened my front-end skills and learned how to operate effectively within a development team.',
+      text: 'I began a front-end developer internship at Liigo Inc. after self-learning frontend development. I helped build and maintain the Area Compass application, a digital transformation app for Japanese travel industry. Working with talented colleagues, I deepened my front-end skills and learned how to operate effectively within a development team.',
     },
     {
       id: 'exp-6',
@@ -354,12 +354,7 @@ function WhatPeopleSay() {
           <p>| Lecturer at Temple University Tokyo Campus</p>
         </div>
         <p className="text-custom-textjapanese pt-1 sm:pt-2">
-          Saritさんはプロダクトのクオリティを重視しながら、スピードが求められる環境でも根気強くデザインに取り組むことができます。
-
-          Saritさんは、エンジニアとしての知識を背景に持ちながら、人間中心設計を実践できる稀有なハイブリッド型のデザイナーです。
-          特に、ユーザ視点から一歩引いて考え、ステークホルダーにUXの観点を的確に伝える姿勢によって、関係者に新しい視点や刺激をもたらしてくれます。
-
-          UIからUX、さらにはデザインの改善作業まで関わることができ、即戦力として開発とデザインを推進できる貴重な人材です。
+          Saritさんはプロダクトのクオリティを重視しながら、スピードが求められる環境でも根気強くデザインに取り組むことができます。Saritさんは、エンジニアとしての知識を背景に持ちながら、人間中心設計を実践できる稀有なハイブリッド型のデザイナーです。特に、ユーザ視点から一歩引いて考え、ステークホルダーにUXの観点を的確に伝える姿勢によって、関係者に新しい視点や刺激をもたらしてくれます。UIからUX、さらにはデザインの改善作業まで関わることができ、即戦力として開発とデザインを推進できる貴重な人材です。
         </p>
 
         <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-6">
@@ -372,8 +367,7 @@ function WhatPeopleSay() {
           <p>| CTO of SIND Inc.</p>
         </div>
         <p className="pt-1 sm:pt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mauris ultricies, viverra nulla non, ornare elit. 
-          Vivamus vel nunc id diam molestie consequat.
+          Sarit is an engineer turned UX designer with a systematic, scientific approach and strong ownership of his work. He bridges developers and users with clear communication, leads production smoothly, and constantly adapts. Beyond design, he is exceptionally helpful, reliable, and a great person to work with.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-6">
@@ -385,9 +379,8 @@ function WhatPeopleSay() {
           </a>
           <p>| Product Engineer at SmartHR Inc.<br></br>| Previously Frontend Engineer at QunaSys Inc.</p>
         </div>
-        <p className="pt-1 sm:pt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu mauris ultricies, viverra nulla non, ornare elit. 
-          Vivamus vel nunc id diam molestie consequat.
+        <p className="text-custom-textjapanese pt-1 sm:pt-2">
+          私はフロントエンドエンジニアとしてSaritさんと一緒に業務を行いました。SaritさんはWebアプリケーションのデザインや、Reactをはじめとするフロントエンド技術に精通し、日本語でのコミュニケーションも非常に円滑な方でした。また、得意とされるデザイン面の調整に加えて、インフラ構築などフロントエンド以外の領域も自力でやり切る力があります。
         </p>
 
         <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 mt-6">
@@ -400,9 +393,7 @@ function WhatPeopleSay() {
           <p>| Co-founder of Digitech Fabrication Co., Ltd.</p>
         </div>
         <p className="pt-1 sm:pt-2">
-          Our company produces custom engineering parts in Thailand, where an effective ordering interface is vital. 
-          Mr. Sarit’s design is both functional and intuitive. 
-          Customers positively noted our platform’s ease of use and aesthetics compared to competitors, significantly strengthen our market competitiveness.
+          Our company produces custom engineering parts in Thailand, where an effective ordering interface is vital. Mr. Sarit’s design is both functional and intuitive. Customers positively noted our platform’s ease of use and aesthetics compared to competitors, significantly strengthen our market competitiveness.
         </p>
         
       </div>
