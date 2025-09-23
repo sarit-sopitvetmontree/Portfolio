@@ -233,14 +233,14 @@ function HistoryList() {
       year: '2024',
       company: 'Sales Marker',
       role: 'Product Designer',
-      text: 'Drove <initiative>; reduced <metric> by <x>%.',
+      text: 'Lorem Ipsum still in progress',
     },
     {
       id: 'exp-2',
       year: '2024',
       company: 'SIND',
-      role: 'Product Designer',
-      text: 'Drove <initiative>; reduced <metric> by <x>%.',
+      role: 'Lead Product Designer',
+      text: 'Lorem Ipsum still in progress',
     },
     {
       id: 'exp-3',
@@ -254,7 +254,7 @@ function HistoryList() {
       year: '2023',
       company: 'Digitech Fabrication',
       role: 'Product Designer',
-      text: 'Drove <initiative>; reduced <metric> by <x>%.',
+      text: 'Lorem Ipsum still in progress',
     },
     {
       id: 'exp-5',
@@ -297,7 +297,7 @@ function HistoryList() {
               <button
                 type="button"
                 onClick={() => toggle(item.id)}
-                className="cursor-pointer group w-full py-4 grid grid-cols-[1fr_1.5rem] sm:grid-cols-[3rem_1fr_1.5rem] items-start gap-4 text-left"
+                className="cursor-pointer group w-full py-4 grid grid-cols-[1fr_1.5rem] sm:grid-cols-[3rem_1fr_1.5rem] items-start gap-2 sm:gap-4 text-left"
                 aria-expanded={isOpen}
                 aria-controls={`${item.id}-panel`}
               >
