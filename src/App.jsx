@@ -210,7 +210,7 @@ function About() {
       </h2>
       <div className="text-custom-text mt-6 text-neutral-500">
         <p>
-          I design simple, beautiful products that not only solve real problems but also drive measurable business results. 
+          I love design simple, beautiful products that solve real problems and drive measurable business results. 
           Whether it’s improving engagement, accelerating time-to-market, or helping startups transform ideas into scalable solutions. 
           Outside of work, I enjoy exploring <span></span>
           <a href="https://www.instagram.com/oil.sarit/" 
