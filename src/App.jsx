@@ -63,10 +63,10 @@ function Hero() {
         I'm Sarit, a product designer who values clarity in everything.
       </h1>
       <h2 className="text-custom-subheader text-neutral-500 mt-1">
-        Everything (n.): Design, User needs, Requirements, Goals, Strategy, Workflow, Communication, Et cetera.
+        Everything (n.): Design, User needs, Constraits, Goals, Strategy, Requirements, Workflow, Communication, etc.
       </h2>
       <p className="text-custom-text mt-6 3xl:mt-8 text-neutral-500">
-        <span className="text-neutral-100">Languages</span> I speak: Thai, English, Japanese, and JavaScript.<br></br>
+        <span className="text-neutral-100">Languages</span>: Thai, English, Japanese, and JavaScript.<br></br>
         <span className="text-neutral-100">Design experience</span>: Healthcare, AI agents, BtoB sales, 3D printing service.<br></br>
         Check out some selected works below, or reach out anytime.
       </p>
@@ -75,7 +75,7 @@ function Hero() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Resume"
-          className="text-custom-text text-amber-300 inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition">
+          className="text-custom-text text-[#FFCB2D] inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition">
           Resume
         </a>
         <a href="#contact" className="text-custom-text text-neutral-100 inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition">
@@ -210,14 +210,13 @@ function About() {
       </h2>
       <div className="text-custom-text mt-6 text-neutral-500">
         <p>
-          I love design simple, beautiful products that solve real problems and drive measurable business results. 
-          Whether it’s improving engagement, accelerating time-to-market, or helping startups transform ideas into scalable solutions. 
+          I love design simple, beautiful products that solve real problems, drive business results, and improve people's life. 
           Outside of work, I enjoy exploring <span></span>
-          <a href="https://www.instagram.com/oil.sarit/" 
+          <a href="https://www.instagram.com/oil.sarit/"
           target="_blank"
           rel="noopener noreferrer" 
           className="hover:opacity-60 underline underline-offset-4 decoration-1">nature</a>
-          <span></span> and immersing myself in all kinds of tales.
+          <span></span> and immersing myself in all kinds of stories.
         </p>
       </div>
     </section>
