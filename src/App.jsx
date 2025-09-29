@@ -205,7 +205,7 @@ const PROJECTS = [
   {
     title: 'Sales Marker',
     tag: 'BtoB Sales',
-    blurb: 'Ran large-scale QA to refine the redesigned UI and uncover root issues',
+    blurb: 'Ran large-scale QA to fix the redesigned UI and uncover persistent root causes',
     href: 'https://example.com/',
     img: 'Thumbnail_SM.png',
   },
