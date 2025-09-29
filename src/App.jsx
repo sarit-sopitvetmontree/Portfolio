@@ -174,10 +174,10 @@ function ProjectCard({
 
 function Work() {
   const projects = [
-    { title: 'Caretomo', blurb: 'Design system & interface: from IA to wireframe to high-fidelity', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Caretomo.png'), tag: 'Healthcare',featured: true },
-    { title: 'Orcha', blurb: 'End-to-end experience and interface design from scratch', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Orcha.png'), tag: 'AI Agent',featured: true },
-    { title: 'Sales Marker', blurb: 'Responsive improvements, UI QA, and new feature delivery', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_SM.png'), tag: 'BtoB Sales' },
-    { title: 'DigiFab', blurb: 'Landing & ordering pages, designed from the ground up', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_DigiFab.png'), tag: '3D Printing Service' },
+    { title: 'Caretomo', blurb: 'Led the entire design process from concept to execution, and set the long-term strategy', href: "https://www.papermark.com/view/cmg4r498h0003jh042d7x96vu", imageSrc: withBase('Thumbnail_Caretomo.png'), tag: 'Healthcare',featured: true },
+    { title: 'Orcha', blurb: 'Led UX and UI design in a multi-designer team from product inception', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Orcha.png'), tag: 'AI Agent',featured: true },
+    { title: 'Sales Marker', blurb: 'Ran large-scale QA to refine the redesigned UI and uncover root issues', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_SM.png'), tag: 'BtoB Sales' },
+    { title: 'DigiFab', blurb: 'Built the landing page and ordering page from scratch to launch a new business', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_DigiFab.png'), tag: '3D Printing Service' },
   ]
   return (
     <section id="work" className="container-wide py-12 sm:py-20">
@@ -224,73 +224,27 @@ function About() {
 }
 
 function HistoryList() {
-  const [openSet, setOpenSet] = useState(() => new Set())
+  const [openId, setOpenId] = useState(null)
 
   const items = [
-    {
-      id: 'exp-1',
-      year: '2024',
-      company: 'Sales Marker',
-      role: 'Product Designer',
-      text: 'Lorem Ipsum still in progress',
-    },
-    {
-      id: 'exp-2',
-      year: '2024',
-      company: 'SIND',
-      role: 'Lead Product Designer',
-      text: 'Lorem Ipsum still in progress',
-    },
-    {
-      id: 'exp-3',
-      year: '2023',
-      company: 'QunaSys',
-      role: 'UX Engineer',
-      text: 'I joined QunaSys as a UX Engineer, a role that covers both design and frontend development. QunaSys operates in the unique field of quantum computing applications. I contributed to product design and developed frontend features for several client projects. Along the way, I learned about frontend technologies and, more importantly, significantly improved my Japanese communication skills.',
-    },
-    {
-      id: 'exp-4',
-      year: '2023',
-      company: 'Digitech Fabrication',
-      role: 'Product Designer',
-      text: 'Lorem Ipsum still in progress',
-    },
-    {
-      id: 'exp-5',
-      year: '2023',
-      company: 'Liigo',
-      role: 'Frontend Engineer',
-      text: 'I began a front-end developer internship at Liigo Inc. after self-learning frontend development. I helped build and maintain the Area Compass application, a digital transformation app for Japanese travel industry. Working with talented colleagues, I deepened my front-end skills and learned how to operate effectively within a development team.',
-    },
-    {
-      id: 'exp-6',
-      year: '2022',
-      company: 'The University of Tokyo',
-      role: 'Graduate Student',
-      text: 'I entered my master’s degree in the field of Aerospace Engineering. With talented people around me, I learned a lot in materials science and did collaborative research with JAXA on 3D printing of aluminum alloy, which was truly exciting for me. Until I learned a hard truth: I really love studying engineering, but I cannot say the same for working in it. This realization led me to the path of being a designer, a career I truly enjoy.',
-    },
-    {
-      id: 'exp-7',
-      year: '2017',
-      company: 'Chulalongkorn University',
-      role: 'Student',
-      text: 'I started my bachelor’s degree in Mechanical Engineering. I learned about mechanical systems and the physics behind them, and gained an introduction to programming. Through these studies, human intelligence fills me with awe. We take the knowledge we gain and, by combining it with our wildest imagination, design and create things that truly change the world and make our lives better.',
-    },
+    { id: 'exp-1', year: '2024', company: 'Sales Marker', role: 'Product Designer', text: 'I joined Sales Marker as a full-time product designer, first focusing on the Sales Marker app, an AI SaaS for BtoB sales. I delivered new features and refined existing functionality. Later I was entrusted to lead design for Orcha, a newly developed AI agent that supports business tasks. The expanded responsibilities were challenging and taught me a great deal, including task and people management.' },
+    { id: 'exp-2', year: '2024', company: 'SIND', role: 'Lead Product Designer', text: 'I joined SIND as founding product designer to build Caretomo, an AI assistant for hospital nurses. I led the end-to-end design process, from concepts and competitive research to high-fidelity prototypes, and defined the long-term design strategy, owning every detail as the sole designer. The hardest part was understanding clinical workflows, yet the challenge was energizing.' },
+    { id: 'exp-3', year: '2023', company: 'QunaSys', role: 'UX Engineer', text: 'I joined QunaSys as a UX Engineer, a role that covers both design and frontend development. QunaSys operates in the unique field of quantum computing applications. I contributed to product design and developed frontend features for several client projects. Along the way, I learned about frontend technologies and, significantly improved my Japanese communication skills.' },
+    { id: 'exp-4', year: '2023', company: 'Digitech Fabrication', role: 'Product Designer', text: 'I supported Digitech Fabrication in its early stage as a product designer for its 3D printing service, helping shape product strategy from day one and building my first design system. I designed the marketing landing page and the ordering flow that lets customers request 3D-printed parts.' },
+    { id: 'exp-5', year: '2023', company: 'Liigo', role: 'Frontend Engineer', text: 'I began a front-end developer internship at Liigo Inc. after self-learning frontend development. I helped build and maintain the Area Compass application, a digital transformation app for Japanese travel industry. Working with talented colleagues, I deepened my front-end skills and learned how to operate effectively within a development team.' },
+    { id: 'exp-6', year: '2022', company: 'The University of Tokyo', role: 'Graduate Student', text: 'I entered my master’s degree in the field of Aerospace Engineering. With talented people around me, I learned a lot in materials science and did collaborative research with JAXA on 3D printing of aluminum alloy, which was truly exciting for me. Until I learned a hard truth: I really love studying engineering, but I cannot say the same for working in it. This realization led me to the path of being a designer.' },
+    { id: 'exp-7', year: '2017', company: 'Chulalongkorn University', role: 'Student', text: 'I started my bachelor’s degree in Mechanical Engineering. I learned about mechanical systems and the physics behind them, and gained an introduction to programming. Through these studies, human intelligence fills me with awe. We take the knowledge we gain and, by combining it with our wildest imagination, design and create things that truly change the world and make our lives better.' },
   ]
 
   const toggle = (id) => {
-    setOpenSet(prev => {
-      const next = new Set(prev)
-      next.has(id) ? next.delete(id) : next.add(id)
-      return next
-    })
+    setOpenId(prev => (prev === id ? null : id))
   }
 
   return (
     <section id="historylist" className="text-custom-text container-wide pb-12 sm:pb-20">
       <div className="mt-6 border-y border-neutral-800 divide-y divide-neutral-800">
         {items.map((item) => {
-          const isOpen = openSet.has(item.id)
+          const isOpen = openId === item.id
           return (
             <div key={item.id}>
               <button
@@ -309,7 +263,7 @@ function HistoryList() {
                   <span className="text-neutral-500 text-right"> {item.role}</span>
                 </span>
 
-                {/* Plus that rotates to a cross; now follows row hover */}
+                {/* Plus that rotates to a cross; follows row hover */}
                 <span className="justify-self-end mt-1">
                   <svg
                     className={`transition-transform duration-300 text-neutral-500 group-hover:text-neutral-100 ${isOpen ? 'rotate-45' : ''}`}
@@ -323,7 +277,7 @@ function HistoryList() {
               {/* Collapsible */}
               <div
                 id={`${item.id}-panel`}
-                className={`grid transition-[grid-template-rows] duration-400 ${isOpen ? 'grid-rows-[1fr] mb-4' : 'grid-rows-[0fr]'} text-neutral-500`}
+                className={`grid transition-[grid-template-rows] duration-300 ${isOpen ? 'grid-rows-[1fr] mb-4' : 'grid-rows-[0fr]'} text-neutral-500`}
               >
                 <div className="min-h-0 overflow-hidden">
                   <p>{item.text}</p>
