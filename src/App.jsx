@@ -87,32 +87,34 @@ function Hero() {
 }
 
 function ProjectCard({
-  title, blurb, href, tag, imageSrc, height = '10rem', featured = false,
+  title, blurb, href, tag, imageSrc,
+  height = '10rem',
+  featured = false,
+  disabled = false,
 }) {
+  const hoverable = !disabled;
+  const Root = disabled ? 'div' : 'a';
+
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Root
+      {...(!disabled && {
+        href,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        "aria-label": `${title} — ${tag} (opens in new tab)`
+      })}
       // base: use the prop as usual
       style={{ '--card-h': height }}
-      className="
-        group rounded-3xl border border-neutral-800 overflow-hidden hover:shadow-md hover:border-neutral-500
-        transition duration-200 flex flex-col xs:flex-row
-
-        /* resolved height = prop by default, 12rem at ≥3xl */
-        [--card-h-resolved:var(--card-h)] 3xl:[--card-h-resolved:12rem]
-
-        xs:h-[var(--card-h-resolved)]
-      "
-      aria-label={`${title} — ${tag} (opens in new tab)`}
+      className={[
+        "rounded-3xl border border-neutral-800 overflow-hidden transition duration-200 flex flex-col xs:flex-row",
+        // resolved height = prop by default, 12rem at ≥3xl
+        "[--card-h-resolved:var(--card-h)] 3xl:[--card-h-resolved:12rem] xs:h-[var(--card-h-resolved)]",
+        // hoverable vs disabled styling
+        hoverable ? "group hover:shadow-md hover:border-neutral-500" : "cursor-default"
+      ].join(' ')}
     >
-      <div
-        className="
-          relative w-full aspect-[20/9] flex-none bg-neutral-700
-          xs:w-[var(--card-h-resolved)] xs:h-[var(--card-h-resolved)]
-        "
-      >
+      {/* LEFT: image — mobile 20:9, ≥xs square sized by --card-h */}
+      <div className="relative w-full aspect-[20/9] flex-none bg-neutral-700 xs:w-[var(--card-h-resolved)] xs:h-[var(--card-h-resolved)]">
         <img
           src={imageSrc}
           alt={title}
@@ -123,16 +125,16 @@ function ProjectCard({
         />
       </div>
 
-      <div
-        className="
-          relative p-5 flex-1 overflow-hidden bg-neutral-900
-          xs:h-[var(--card-h-resolved)] xs:flex xs:flex-col xs:justify-center
-        "
-      >
+      {/* RIGHT: text column */}
+      <div className="relative p-5 flex-1 overflow-hidden bg-neutral-900 xs:h-[var(--card-h-resolved)] xs:flex xs:flex-col xs:justify-center">
+        {/* REVEAL OVERLAY (disabled => stays closed, no hover transition) */}
         <div
-          className="pointer-events-none absolute inset-y-0 left-0 hidden xs:block
-                     w-0 group-hover:w-full group-focus-visible:w-full
-                     transition-[width] duration-500 ease-out overflow-hidden [will-change:width]"
+          className={[
+            "pointer-events-none absolute inset-y-0 left-0 hidden xs:block overflow-hidden",
+            hoverable
+              ? "w-0 group-hover:w-full group-focus-visible:w-full transition-[width] duration-500 ease-out [will-change:width]"
+              : "w-0" // no transition, no hover width
+          ].join(' ')}
           aria-hidden="true"
         >
           <img
@@ -149,48 +151,102 @@ function ProjectCard({
           />
         </div>
 
+        {/* CONTENT */}
         <div className="relative z-10">
-          <div className="text-custom-label uppercase tracking-widest text-neutral-500">{tag}</div>
-          <h3 className="text-custom-subheader mt-1 text-neutral-100">{title}</h3>
-          <p className="text-custom-text mt-1 text-neutral-500">{blurb}</p>
+          <div className={`text-custom-label uppercase tracking-widest ${disabled ? 'text-neutral-600' : 'text-neutral-500'}`}>{tag}</div>
+          <h3 className={`text-custom-subheader mt-1 ${disabled ? 'text-neutral-500' : 'text-neutral-100'}`}>
+            {title}
+          </h3>
+          <p className={`text-custom-text mt-1 ${disabled ? 'text-neutral-600' : 'text-neutral-500'}`}>{blurb}</p>
         </div>
 
+        {/* Featured sparkles: visible by default; fades out on hover only if hoverable */}
         {featured && (
           <Sparkle
-            className="pointer-events-none absolute top-5 right-5 w-6 h-6 text-neutral-500 opacity-100 transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0"
+            className={[
+              "pointer-events-none absolute top-5 right-5 w-6 h-6 text-neutral-500 opacity-100 transition-opacity duration-200",
+              hoverable ? "group-hover:opacity-0 group-focus-visible:opacity-0" : ""
+            ].join(' ')}
             aria-hidden="true"
           />
         )}
 
+        {/* Presentation icon: shows on hover only if hoverable */}
         <Presentation
-          className="absolute top-5 right-5 w-6 h-6 text-neutral-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+          className={[
+            "absolute top-5 right-5 w-6 h-6 text-neutral-500 opacity-0 transition-opacity duration-200",
+            hoverable ? "group-hover:opacity-100 group-focus-visible:opacity-100" : ""
+          ].join(' ')}
           aria-hidden="true"
         />
       </div>
-    </a>
+    </Root>
   );
 }
 
+const PROJECTS = [
+  {
+    title: 'Caretomo',
+    tag: 'Healthcare',
+    blurb:
+      'Led the entire design process from concept to execution, and set the long-term strategy',
+    href: 'https://www.papermark.com/view/cmg4r498h0003jh042d7x96vu',
+    img: 'Thumbnail_Caretomo.png',
+    featured: true,
+  },
+  {
+    title: 'Orcha',
+    tag: 'AI Agent',
+    blurb: 'Led UX and UI design in a multi-designer team from product inception',
+    href: 'https://example.com/',
+    img: 'Thumbnail_Orcha.png',
+    featured: true,
+  },
+  {
+    title: 'Sales Marker',
+    tag: 'BtoB Sales',
+    blurb: 'Ran large-scale QA to refine the redesigned UI and uncover root issues',
+    href: 'https://example.com/',
+    img: 'Thumbnail_SM.png',
+  },
+  {
+    title: 'DigiFab',
+    tag: '3D Printing Service',
+    blurb: 'Built the landing page and ordering page from scratch to launch a new business',
+    href: 'https://example.com/',
+    img: 'Thumbnail_DigiFab.png',
+  },
+];
+
+// Build full props for ProjectCard (keeps editing simple above)
+const buildProjects = (list) =>
+  list.map((p) => ({
+    ...p,
+    href: p.href ?? withBase('sample.pdf'),
+    imageSrc: withBase(p.img),
+  }));
 
 function Work() {
-  const projects = [
-    { title: 'Caretomo', blurb: 'Led the entire design process from concept to execution, and set the long-term strategy', href: "https://www.papermark.com/view/cmg4r498h0003jh042d7x96vu", imageSrc: withBase('Thumbnail_Caretomo.png'), tag: 'Healthcare',featured: true },
-    { title: 'Orcha', blurb: 'Led UX and UI design in a multi-designer team from product inception', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_Orcha.png'), tag: 'AI Agent',featured: true },
-    { title: 'Sales Marker', blurb: 'Ran large-scale QA to refine the redesigned UI and uncover root issues', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_SM.png'), tag: 'BtoB Sales' },
-    { title: 'DigiFab', blurb: 'Built the landing page and ordering page from scratch to launch a new business', href: withBase('sample.pdf'), imageSrc: withBase('Thumbnail_DigiFab.png'), tag: '3D Printing Service' },
-  ]
+  const projects = buildProjects(PROJECTS);
+  const disableFrom = Math.max(0, projects.length - 2);
+
   return (
     <section id="work" className="container-wide py-12 sm:py-20">
       <div className="flex items-end justify-between gap-6">
         <p className="text-custom-header text-neutral-500">Selected works</p>
       </div>
+
       <div className="mt-6 flex flex-col gap-4 3xl:gap-5">
-        {projects.map((p) => (
-          <ProjectCard key={p.title} {...p} />
+        {projects.map((p, i) => (
+          <ProjectCard
+            key={p.title}
+            {...p}
+            disabled={i >= disableFrom}  // ← last two are disabled
+          />
         ))}
       </div>
     </section>
-  )
+  );
 }
 
 function About() {
