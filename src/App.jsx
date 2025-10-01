@@ -198,7 +198,7 @@ const PROJECTS = [
     title: 'Orcha',
     tag: 'AI Agent',
     blurb: 'Led UX and UI design in a multi-designer team from product inception',
-    href: 'https://example.com/',
+    href: 'https://www.papermark.com/view/cmg792gd40006gy04fdyp385m',
     img: 'Thumbnail_Orcha.png',
     featured: true,
   },
