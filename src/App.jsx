@@ -71,7 +71,7 @@ function Hero() {
         Check out some selected works below, or reach out anytime.
       </p>
       <div className="mt-8 3xl:mt-10 flex gap-3">
-        <a href={`${import.meta.env.BASE_URL}sarit_resume.pdf`}
+        <a href={`${import.meta.env.BASE_URL}Sarit_Resume_ENJP.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Resume"
@@ -422,7 +422,7 @@ function Contact() {
         </span>
       </h2>
       <p className="text-custom-text mt-4 text-neutral-500">
-        I am open to interesting product problems and career opportunity.
+        I am open to interesting product problems and career opportunity
       </p>
       <div className="text-custom-text mt-8 flex flex-wrap gap-3">
         <a className="inline-flex items-center rounded-full px-4 py-2 border border-neutral-700 hover:bg-neutral-700 transition"
